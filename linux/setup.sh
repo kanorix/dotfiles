@@ -4,7 +4,9 @@ set -eu
 
 ### Rust install
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+source "$HOME/.cargo/env"
 
+### install application
 cargo install cargo-binstall
 cargo binstall --locked bat
 cargo binstall eza
