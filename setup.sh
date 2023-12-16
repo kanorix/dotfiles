@@ -9,7 +9,9 @@ if [[ $UNAME_OS == "Darwin" ]]; then
 elif [[ $UNAME_OS == "Linux" ]]; then
     #Linux用のコード
     apt update
-    apt install -y git make zsh
+    (type git > /dev/null 2>&1) || apt install -y git
+    (type make > /dev/null 2>&1) || apt install -y make
+    (type zsh > /dev/null 2>&1) || apt install -y zsh
 else
     echo "No supported OS!"
     exit 0

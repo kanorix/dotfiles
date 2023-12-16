@@ -31,9 +31,6 @@ fi
 
 cat $dotfiles_dir/macos/homebrew/Brewfile > .brewcache
 
-# デフォルトのシェルをzshに変更
-# chsh -s $(which zsh)
-
 brew bundle install --no-lock --cleanup --file=.brewcache
 rm .brewcache
 
