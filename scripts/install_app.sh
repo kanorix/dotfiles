@@ -33,6 +33,16 @@ if ! (type brew > /dev/null 2>&1); then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
+# Homebrewにパスを通す
+UNAME_OS=`uname -s`
+if [ UNAME_OS = "Darwin" ]; then
+    #mac用のコード
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ UNAME_OS = "Linux" ]; then
+    #Linux用のコード
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 echo "run brew doctor ..."
 brew doctor
 

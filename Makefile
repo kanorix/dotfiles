@@ -17,8 +17,8 @@ endif
 setup:
 	@echo "Start setup for ${PROFILE}"
 	@./scripts/install_app.sh ${PROFILE}
-	@./scripts/create_link.sh ${PROFILE}
 	@./${PROFILE}/setup.sh
+	@./scripts/create_link.sh ${PROFILE}
 
 .PHONY: check
 check:

@@ -11,7 +11,14 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Homebrewでインストールしたアプリにパスを通す
-eval "$(/opt/homebrew/bin/brew shellenv)"
+UNAME_OS=`uname -s`
+if [ UNAME_OS = "Darwin" ]; then
+    #mac用のコード
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ UNAME_OS = "Linux" ]; then
+    #Linux用のコード
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # sheldonを起動する
 # https://zenn.dev/fuzmare/articles/zsh-plugin-manager-cache
