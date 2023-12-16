@@ -10,7 +10,7 @@ if [ $# != 1 ]; then
     exit 1
 fi
 
-if ![[ ${profiles[*]} =~ (^|[[:space:]])"$1"($|[[:space:]]) ]]; then
+if [[ ! ${profiles[*]} =~ (^|[[:space:]])"$1"($|[[:space:]]) ]]; then
     # 引数で指定されたプロファイルが存在しない
     echo "No such profile: $1"
     exit 1
