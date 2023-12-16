@@ -30,9 +30,9 @@ function create_symbolic_link() {
     echo $mapping | while IFS='"' read _ source _ target _;
     do
         # echo $source : $target
-        dir=$(dirname $target)
         if [[ ! -e $target ]]; then
-            mkdir -p dir
+            mkdir -p $(dirname $target)
+            touch "$target"
         fi
 
         ln -svf $dotfiles_dir/$profile/$source ~/$target
