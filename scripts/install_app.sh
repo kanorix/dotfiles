@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -u
+set -eu
 # set -x
 
 dotfiles_dir=~/dotfiles

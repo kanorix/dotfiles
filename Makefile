@@ -16,11 +16,11 @@ endif
 .PHONY: setup
 setup:
 	@echo "Start setup for ${PROFILE}"
-	@zsh ./scripts/install_app.sh ${PROFILE}
-	@zsh ./scripts/create_link.sh ${PROFILE}
-	@zsh ./${PROFILE}/setup.sh
+	@./scripts/install_app.sh ${PROFILE}
+	@./scripts/create_link.sh ${PROFILE}
+	@./${PROFILE}/setup.sh
 
 .PHONY: check
 check:
 	@echo "Start check for ${PROFILE}"
-	@zsh ./scripts/check_app.sh ${PROFILE}
+	@./scripts/check_app.sh ${PROFILE}

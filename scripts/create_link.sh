@@ -28,9 +28,5 @@ function create_symbolic_link() {
     done
 }
 
-# if [ -e $dotfiles_dir/$profile/mapping ]; then
-#     # mappingが存在しない場合、共通のmappingのみを使う
-#     mapping=`\cat $dotfiles_dir/common/mapping`
-# else
 create_symbolic_link common
 create_symbolic_link $profile

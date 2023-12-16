@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -eu -o pipefail
+set -eu
 # set -x
 
 cd ~/

@@ -1,7 +1,4 @@
-```sh
-$ cd ~ && git clone <repository>
-```
 
 ```sh
-$ brew bundle dump --describe 'comment' --global --force
+$ curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/main/setup.sh | sh -s
 ```
