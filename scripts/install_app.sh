@@ -35,6 +35,7 @@ fi
 
 # Homebrewにパスを通す
 UNAME_OS=`uname -s`
+echo "##### $UNAME_OS"
 if [ UNAME_OS = "Darwin" ]; then
     #mac用のコード
     echo "brew setup finished brew for Mac"
@@ -45,9 +46,9 @@ elif [ UNAME_OS = "Linux" ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-echo ##################################################
-echo # application install
-echo ##################################################
+echo "##################################################"
+echo "# application install"
+echo "##################################################"
 
 if [ ! -e $dotfiles_dir/$profile/homebrew/Brewfile ]; then
     # Brewfileが存在しない場合、共通のBrewfileを使う
