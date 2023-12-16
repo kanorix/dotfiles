@@ -36,11 +36,11 @@ fi
 # Homebrewにパスを通す
 UNAME_OS=`uname -s`
 echo "##### $UNAME_OS"
-if [ UNAME_OS = "Darwin" ]; then
+if [[ UNAME_OS = "Darwin" ]]; then
     #mac用のコード
     echo "brew setup finished brew for Mac"
     eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [ UNAME_OS = "Linux" ]; then
+elif [[ UNAME_OS = "Linux" ]]; then
     #Linux用のコード
     echo "brew setup finished brew for Linux"
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
