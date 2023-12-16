@@ -21,7 +21,7 @@ profile=$1
 function create_symbolic_link() {
     _profile=$1
     if [ ! -e $dotfiles_dir/$_profile/mapping ]; then
-        echo "Not found: $dotfiles_dir/$prof/mapping"
+        echo "Not found: $dotfiles_dir/$_profile/mapping"
         return 0
     fi
 
