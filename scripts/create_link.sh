@@ -25,14 +25,14 @@ fi
 profile=$1
 
 function create_symbolic_link() {
-    prof=$1
-    if [ ! -e $dotfiles_dir/$profile/mapping ]; then
-        echo "Not found: $dotfiles_dir/$profile/mapping"
+    _profile=$1
+    if [ ! -e $dotfiles_dir/$_profile/mapping ]; then
+        echo "Not found: $dotfiles_dir/$prof/mapping"
         return 0
     fi
 
     # 空行、コメントを削除したmappingファイルを作る
-    cat $dotfiles_dir/$prof/mapping | grep -v '^$' | grep -v '^#' > .linkcache
+    cat $dotfiles_dir/$_profile/mapping | grep -v '^$' | grep -v '^#' > .linkcache
 
     while IFS='"' read _ source _ target _;
     do
@@ -44,7 +44,7 @@ function create_symbolic_link() {
             touch ~/"$target"
         fi
 
-        ln -svf $dotfiles_dir/$prof/$source ~/$target
+        ln -svf $dotfiles_dir/$_profile/$source ~/$target
     done < .linkcache
     rm .linkcache
 }
