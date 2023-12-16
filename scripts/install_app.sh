@@ -43,9 +43,6 @@ elif [ UNAME_OS = "Linux" ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-echo "run brew doctor ..."
-brew doctor
-
 ##################################################
 # application install
 ##################################################
