@@ -1,3 +1,3 @@
-#!/bin/zsh
-set -eu -o pipefail
+#!/bin/sh
+set -eu
 # set -x
