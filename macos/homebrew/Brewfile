@@ -3,6 +3,12 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "leoafarias/fvm"
 
+brew "bat"
+brew "eza"
+brew "git-secrets"
+brew "sheldon"
+brew "starship"
+
 brew "colima", restart_service: true
 brew "docker"
 brew "docker-buildx"

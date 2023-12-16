@@ -16,9 +16,9 @@ endif
 .PHONY: setup
 setup:
 	@echo "Start setup for ${PROFILE}"
-	@./scripts/install_app.sh ${PROFILE}
 	@./${PROFILE}/setup.sh
 	@./scripts/create_link.sh ${PROFILE}
+	@sheldon lock
 
 .PHONY: check
 check:
