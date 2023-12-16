@@ -3,7 +3,11 @@ set -eu
 # set -x
 
 ### Rust install
-apt install -y gcc
+
+if ! (type gcc > /dev/null 2>&1); then
+    # gccがなければインストールする
+    apt install -y gcc
+fi
 
 if ! (type rustup > /dev/null 2>&1); then
     # rustがなければインストールする

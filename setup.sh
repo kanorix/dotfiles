@@ -10,6 +10,11 @@ elif [[ $UNAME_OS == "Linux" ]]; then
     #Linux用のコード
     apt update
     apt install -y git make
+    if ! (type rustup > /dev/null 2>&1); then
+        # rustがなければインストールする
+        curl https://sh.rustup.rs -sSf | sh -s -- -y
+        source "$HOME/.cargo/env"
+    fi
 else
     echo nomatch
 fi

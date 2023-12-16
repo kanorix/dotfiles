@@ -1,7 +1,7 @@
 export LANG=ja_JP.UTF-8
 
 # cargo (rust module binary path)
-export PATH="~/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
 
 # Path to fvm (flutter version management)
 export PATH=$PATH:$HOME/fvm/default/bin
