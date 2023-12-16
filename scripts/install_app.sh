@@ -45,9 +45,9 @@ elif [ UNAME_OS = "Linux" ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-##################################################
-# application install
-##################################################
+echo ##################################################
+echo # application install
+echo ##################################################
 
 if [ ! -e $dotfiles_dir/$profile/homebrew/Brewfile ]; then
     # Brewfileが存在しない場合、共通のBrewfileを使う
