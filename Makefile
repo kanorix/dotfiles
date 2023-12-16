@@ -19,6 +19,7 @@ setup:
 	@./${PROFILE}/setup.sh
 	@./scripts/create_link.sh ${PROFILE}
 	@sheldon lock
+	@echo "End setup!"
 
 .PHONY: check
 check:

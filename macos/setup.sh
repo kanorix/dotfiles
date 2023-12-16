@@ -3,7 +3,6 @@ set -eu -o pipefail
 # set -x
 
 dotfiles_dir=~/dotfiles
-profile=macos
 
 ##################################################
 # brew install
@@ -30,18 +29,7 @@ fi
 # application install
 ##################################################
 
-\cat $dotfiles_dir/$profile/homebrew/Brewfile > .brewcache
-# if [ ! -e $dotfiles_dir/$profile/homebrew/Brewfile ]; then
-#     # Brewfileが存在しない場合、共通のBrewfileを使う
-#     \cat $dotfiles_dir/common/homebrew/Brewfile > .brewcache
-# else
-    # # Brewfileが存在する場合、Brewfileを結合したものを使う
-    # \cat $dotfiles_dir/common/homebrew/Brewfile $dotfiles_dir/$profile/homebrew/Brewfile \
-    #     | sort --unique \
-    #     | grep -v '^$' \
-    #     | grep -v '^#' \
-    #     > .brewcache
-# fi
+cat $dotfiles_dir/macos/homebrew/Brewfile > .brewcache
 
 # デフォルトのシェルをzshに変更
 # chsh -s $(which zsh)
