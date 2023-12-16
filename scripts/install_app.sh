@@ -10,11 +10,17 @@ if [ $# != 1 ]; then
     exit 1
 fi
 
-if [[ ${profiles[(ie)$1]} -gt ${#profiles} ]]; then
+if [[ ${profiles[*]} =~ (^|[[:space:]])"$1"($|[[:space:]]) ]]; then
     # 引数で指定されたプロファイルが存在しない
     echo "No such profile: $1"
     exit 1
 fi
+
+# if [[ ${profiles[(ie)$1]} -gt ${#profiles} ]]; then
+#     # 引数で指定されたプロファイルが存在しない
+#     echo "No such profile: $1"
+#     exit 1
+# fi
 
 profile=$1
 
