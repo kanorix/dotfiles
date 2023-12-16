@@ -5,6 +5,7 @@ set -eu
 UNAME_OS=`uname -s`
 if [[ $UNAME_OS == "Darwin" ]]; then
     #mac用のコード
+    echo "mac"
 elif [[ $UNAME_OS == "Linux" ]]; then
     #Linux用のコード
     apt update
