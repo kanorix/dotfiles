@@ -25,18 +25,28 @@ fi
 profile=$1
 
 function create_symbolic_link() {
-    profile=$1
-    mapping=`\cat $dotfiles_dir/$profile/mapping | grep -v '^$' | grep -v '^#'`
-    echo $mapping | while IFS='"' read _ source _ target _;
+    prof=$1
+    if [ ! -e $dotfiles_dir/$profile/mapping ]; then
+        echo "Not found: $dotfiles_dir/$profile/mapping"
+        exit 0
+    fi
+
+    # 空行、コメントを削除したmappingファイルを作る
+    cat $dotfiles_dir/$prof/mapping | grep -v '^$' | grep -v '^#' > .linkcache
+
+    while IFS='"' read _ source _ target _;
     do
         # echo $source : $target
-        if [[ ! -e $target ]]; then
-            mkdir -p $(dirname $target)
-            touch "$target"
+        echo "file: ~/$target"
+        if [ ! -e ~/"$target" ]; then
+            echo "created file: ~/$target"
+            mkdir -p $(dirname ~/"$target")
+            touch ~/"$target"
         fi
 
-        ln -svf $dotfiles_dir/$profile/$source ~/$target
-    done
+        ln -svf $dotfiles_dir/$prof/$source ~/$target
+    done < .linkcache
+    rm .linkcache
 }
 
 create_symbolic_link common
