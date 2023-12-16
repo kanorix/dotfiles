@@ -28,7 +28,7 @@ function create_symbolic_link() {
     prof=$1
     if [ ! -e $dotfiles_dir/$profile/mapping ]; then
         echo "Not found: $dotfiles_dir/$profile/mapping"
-        exit 0
+        return 0
     fi
 
     # 空行、コメントを削除したmappingファイルを作る
