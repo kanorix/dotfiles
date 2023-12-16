@@ -59,7 +59,10 @@ else
         > .brewcache
 fi
 
-brew bundle install --no-lock --cleanup --force --file=.brewcache
+# デフォルトのシェルをzshに変更
+# chsh -s $(which zsh)
+
+brew bundle install --no-lock --cleanup --file=.brewcache
 rm .brewcache
 
 # init zsh plugin
