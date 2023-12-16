@@ -1,0 +1,5 @@
+# list mapping file
+"starship/starship.toml" => ".config/starship.toml"
+"sheldon/plugins.toml"   => ".config/sheldon/plugins.toml"
+"zsh/.zshrc"             => ".zshrc"
+"zsh/.zshenv"            => ".zshenv"

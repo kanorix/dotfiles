@@ -1,0 +1,36 @@
+#!/bin/zsh
+set -eu -o pipefail
+# set -x
+
+dotfiles_dir=~/dotfiles
+profiles=(macos linux)
+
+if [ $# != 1 ]; then
+    echo "引数エラー: expected:[PROFILE]. but got [$*]"
+    exit 1
+fi
+
+if [[ ${profiles[(ie)$1]} -gt ${#profiles} ]]; then
+    # 引数で指定されたプロファイルが存在しない
+    echo "No such profile: $1"
+    exit 1
+fi
+
+profile=$1
+
+function create_symbolic_link() {
+    profile=$1
+    mapping=`\cat $dotfiles_dir/$profile/mapping | grep -v '^$' | grep -v '^#'`
+    echo $mapping | while IFS='"' read _ source _ target _;
+    do
+        # echo $source : $target
+        ln -svf $dotfiles_dir/$profile/$source ~/$target
+    done
+}
+
+# if [ -e $dotfiles_dir/$profile/mapping ]; then
+#     # mappingが存在しない場合、共通のmappingのみを使う
+#     mapping=`\cat $dotfiles_dir/common/mapping`
+# else
+create_symbolic_link common
+create_symbolic_link $profile

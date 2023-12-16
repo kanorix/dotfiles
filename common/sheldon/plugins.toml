@@ -1,0 +1,46 @@
+# sheldonの設定ファイル
+shell = "zsh"
+
+[plugins.zsh-defer]
+github = 'romkatv/zsh-defer'
+apply = ['source']
+
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+# 構文のハイライト(https://github.com/zsh-users/zsh-syntax-highlighting)
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+apply = ['defer']
+
+# コマンド入力途中で上下キー押したときの過去履歴がいい感じに出るようになる
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+apply = ['defer']
+
+# 過去に入力したコマンドの履歴が灰色のサジェストで出る
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ['defer']
+
+# 補完強化
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+apply = ['defer']
+
+# 256色表示にする
+[plugins.zsh-256color]
+github = "chrissicool/zsh-256color"
+
+# ディレクトリ移動が楽になるやつ
+[plugins.z]
+github = "rupa/z"
+use = ['{{ name }}.sh']
+
+[plugins.scripts]
+local = '~/dotfiles/common/sheldon/scripts'
+use = ['*.zsh']
+apply = ['defer']
+
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
