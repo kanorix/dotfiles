@@ -2,12 +2,12 @@
 set -eu
 # set -x
 
-function install_app() {
-    apt install -y $1
-}
+### Rust install
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-install_app bat
-install_app eza
-install_app git-secrets
-install_app sheldon
-install_app starship
+cargo install cargo-binstall
+cargo binstall --locked bat
+cargo binstall eza
+# install_app git-secrets
+cargo binstall sheldon
+cargo binstall --locked starship

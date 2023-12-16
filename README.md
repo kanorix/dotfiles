@@ -1,6 +1,6 @@
 
 ```sh
-$ curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/experimental/setup.sh | sh -s
+$ curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/experimental/setup.sh | bash -s
 ```
 
 ## linux
@@ -8,5 +8,5 @@ $ curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/experimental/setup
 ```sh
 $ apt update
 $ apt install -y curl
-$ curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/experimental/setup.sh | sh -s
+$ curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/experimental/setup.sh | bash -s
 ```
