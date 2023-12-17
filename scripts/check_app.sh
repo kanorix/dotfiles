@@ -1,5 +1,5 @@
-#!/bin/zsh
-set -eu -o pipefail
+#!/bin/bash
+set -eu
 # set -x
 
 dotfiles_dir=~/dotfiles

@@ -1,8 +1,0 @@
-tap "homebrew/bundle"
-tap "homebrew/services"
-
-brew "bat"
-brew "eza"
-brew "git-secrets"
-brew "sheldon"
-brew "starship"
