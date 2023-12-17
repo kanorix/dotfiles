@@ -10,7 +10,7 @@ xcode-select --install
 ### インストール
 
 ```sh
-curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/experimental/setup.sh | bash -s
+curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/main/setup.sh | bash -s
 ```
 
 ## Linux(ubuntu)
@@ -19,8 +19,9 @@ curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/experimental/setup.s
 
 ```sh
 apt update && apt install -y curl && \
-    curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/experimental/setup.sh | bash -s
+    curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/main/setup.sh | bash -s
 ```
+
 ### デフォルトのシェルをzshに変更
 
 ```sh
