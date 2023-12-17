@@ -28,7 +28,7 @@ apt update && apt install -y curl && \
 sudo chsh -s $(which zsh)
 ```
 
-## GUI Application
+## CUI Application
 
 |      Name       | Config |         MacOS         | Linux |
 | :-------------: | :----: | :-------------------: | :---: |
