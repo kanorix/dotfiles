@@ -3,17 +3,17 @@ export LANG=ja_JP.UTF-8
 # cargo (rust module binary path)
 source "$HOME/.cargo/env"
 
-# Path to fvm (flutter version management)
-export PATH=$PATH:$HOME/fvm/default/bin
-
-# volta (nodejs version management)
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Homebrewでインストールしたアプリにパスを通す
 UNAME_OS=`uname -s`
 if [[ $UNAME_OS == "Darwin" ]]; then
     #mac用のコード
+    # Path to fvm (flutter version management)
+    export PATH=$PATH:$HOME/fvm/default/bin
+
+    # volta (nodejs version management)
+    export VOLTA_HOME="$HOME/.volta"
+    export PATH="$VOLTA_HOME/bin:$PATH"
     eval "$(/opt/homebrew/bin/brew shellenv)"
 # elif [[ $UNAME_OS == "Linux" ]]; then
 #     #Linux用のコード
