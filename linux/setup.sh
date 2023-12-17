@@ -6,12 +6,11 @@ set -eu
 
 # (type gcc > /dev/null 2>&1) || apt install -y gcc
 
-
-# if ! (type rustup > /dev/null 2>&1); then
-#     # rustがなければインストールする
-#     curl https://sh.rustup.rs -sSf | sh -s -- -y
-#     source "$HOME/.cargo/env"
-# fi
+if ! (type rustup > /dev/null 2>&1); then
+    # rustがなければインストールする
+    curl https://sh.rustup.rs -sSf | sh -s -- -y
+    source "$HOME/.cargo/env"
+fi
 
 ### install cargo-binstall
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
