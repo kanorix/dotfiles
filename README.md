@@ -3,5 +3,5 @@ $ cd ~ && git clone <repository>
 ```
 
 ```sh
-$ brew bundle dump --describe 'comment' --global --force
+$ brew bundle dump --describe 'comment' --file=.brewfile
 ```

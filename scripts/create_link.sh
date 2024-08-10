@@ -19,8 +19,8 @@ fi
 profile=$1
 
 function create_symbolic_link() {
-    profile=$1
-    mapping=`\cat $dotfiles_dir/$profile/mapping | grep -v '^$' | grep -v '^#'`
+    local profile=$1
+    local mapping=`\cat $dotfiles_dir/$profile/mapping | grep -v '^$' | grep -v '^#'`
     echo $mapping | while IFS='"' read _ source _ target _;
     do
         # echo $source : $target

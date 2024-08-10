@@ -42,5 +42,8 @@ local = '~/dotfiles/common/sheldon/scripts'
 use = ['*.zsh']
 apply = ['defer']
 
+[plugins.direnv]
+inline = 'eval "$(direnv hook zsh)"'
+
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'

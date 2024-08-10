@@ -10,6 +10,9 @@ export PATH=$PATH:$HOME/fvm/default/bin
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# abd
+export PATH=$PATH:/Users/ryu/Library/Android/sdk/platform-tools
+
 # Homebrewでインストールしたアプリにパスを通す
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
