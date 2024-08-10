@@ -35,7 +35,7 @@ brew bundle install --no-lock --cleanup --file=.brewcache
 rm .brewcache
 
 # docker buildx
-if [ ! -L ~/.docker/cli-plugins/docker-buildx ]; then
-    mkdir -p ~/.docker/cli-plugins
-    ln -sfn $(which docker-buildx) ~/.docker/cli-plugins/docker-buildx
-fi
+# if [ ! -L ~/.docker/cli-plugins/docker-buildx ]; then
+#     mkdir -p ~/.docker/cli-plugins
+#     ln -sfn $(which docker-buildx) ~/.docker/cli-plugins/docker-buildx
+# fi

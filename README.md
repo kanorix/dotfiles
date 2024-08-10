@@ -56,3 +56,7 @@ sudo chsh -s $(which zsh)
 |       `kitty`        |   ○    |   ○   |   -   |
 | `visual-studio-code` |   -    |   ○   |   -   |
 |      `xquartz`       |   -    |   ○   |   -   |
+
+```
+$ brew bundle dump --describe 'comment' --file=.brewfile
+```
