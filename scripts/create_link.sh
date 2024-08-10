@@ -1,5 +1,5 @@
-#!/bin/zsh
-set -eu -o pipefail
+#!/bin/bash
+set -eu
 # set -x
 
 dotfiles_dir=~/dotfiles
@@ -10,7 +10,7 @@ if [ $# != 1 ]; then
     exit 1
 fi
 
-if [[ ${profiles[(ie)$1]} -gt ${#profiles} ]]; then
+if [[ ! ${profiles[*]} =~ (^|[[:space:]])"$1"($|[[:space:]]) ]]; then
     # 引数で指定されたプロファイルが存在しない
     echo "No such profile: $1"
     exit 1
@@ -19,18 +19,29 @@ fi
 profile=$1
 
 function create_symbolic_link() {
-    local profile=$1
-    local mapping=`\cat $dotfiles_dir/$profile/mapping | grep -v '^$' | grep -v '^#'`
-    echo $mapping | while IFS='"' read _ source _ target _;
+    _profile=$1
+    if [ ! -e $dotfiles_dir/$_profile/mapping ]; then
+        echo "Not found: $dotfiles_dir/$_profile/mapping"
+        return 0
+    fi
+
+    # 空行、コメントを削除したmappingファイルを作る
+    cat $dotfiles_dir/$_profile/mapping | grep -v '^$' | grep -v '^#' > .linkcache
+
+    while IFS='"' read _ source _ target _;
     do
         # echo $source : $target
-        ln -svf $dotfiles_dir/$profile/$source ~/$target
-    done
+        echo "file: ~/$target"
+        if [ ! -e ~/"$target" ]; then
+            echo "created file: ~/$target"
+            mkdir -p $(dirname ~/"$target")
+            touch ~/"$target"
+        fi
+
+        ln -svf $dotfiles_dir/$_profile/$source ~/$target
+    done < .linkcache
+    rm .linkcache
 }
 
-# if [ -e $dotfiles_dir/$profile/mapping ]; then
-#     # mappingが存在しない場合、共通のmappingのみを使う
-#     mapping=`\cat $dotfiles_dir/common/mapping`
-# else
 create_symbolic_link common
 create_symbolic_link $profile
