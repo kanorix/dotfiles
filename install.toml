@@ -1,0 +1,25 @@
+[sheldon]
+use.linux = 'cargo'
+use.macos = 'brew'
+
+[zsh]
+use.linux = 'apt'
+use.macos = 'brew'
+
+[colima]
+use.macos = 'brew'
+brew.option = ['restart_service: true']
+
+[kitty]
+use.macos = 'cask'
+
+[docker]
+use.macos = 'brew'
+
+[rustup]
+use.macos = 'scripts/rustup.sh'
+zshrc = 'source "$HOME/.cargo/env"'
+
+source = '''
+yq -oy 'with_entries(select(.value.use.macos == "brew")) | keys' install.toml
+'''

@@ -38,7 +38,7 @@ github = "rupa/z"
 use = ['{{ name }}.sh']
 
 [plugins.scripts]
-local = '~/dotfiles/common/sheldon/scripts'
+local = '~/.config/sheldon/scripts'
 use = ['*.zsh']
 apply = ['defer']
 

@@ -3,7 +3,6 @@ export LANG=ja_JP.UTF-8
 # cargo (rust module binary path)
 source "$HOME/.cargo/env"
 
-
 # abd
 export PATH=$PATH:/Users/ryu/Library/Android/sdk/platform-tools
 
