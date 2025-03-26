@@ -1,6 +1,11 @@
 #################################  OTHERS  #################################
 # automatically change directory when dir name is typed
 setopt auto_cd
+# ディレクトリ移動時に履歴を積む
+DIRSTACKSIZE=100
+setopt auto_pushd
+# 同ディレクトリを履歴に追加しない
+setopt pushd_ignore_dups
 
 # 末尾から自動的に/を除かない
 setopt noautoremoveslash

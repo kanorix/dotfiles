@@ -17,6 +17,7 @@ if [[ $UNAME_OS == "Darwin" ]]; then
     export VOLTA_HOME="$HOME/.volta"
     export PATH="$VOLTA_HOME/bin:$PATH"
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    export FZF_DEFAULT_OPTS='--layout=reverse --border --select-1'
 # elif [[ $UNAME_OS == "Linux" ]]; then
 #     #Linux用のコード
 #     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -13,6 +13,7 @@ unzip *.zip
 # ファイルをフラットにする
 find . -type f -exec cp '{}' . ';'
 
+# fontを登録する
 cp *.ttf ~/Library/fonts/
 
 rm -rf "$d"

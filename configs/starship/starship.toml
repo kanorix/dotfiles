@@ -19,7 +19,8 @@ $cmd_duration\
 [ ](fg:#1d2230)\
 $time\
 [ ](fg:#1d2230)\
-\n$character"""
+\n$character
+"""
 
 # right_format = """
 # $time

@@ -5,7 +5,16 @@
 ### Argumant ###
 
 # PROFILE=$1
-DOTFILES_DIR=~/dotfiles
+DOTFILES_DIR="$HOME/dotfiles"
+
+function trim() {
+    local var="$*"
+    # remove leading whitespace characters
+    var="${var#"${var%%[![:space:]]*}"}"
+    # remove trailing whitespace characters
+    var="${var%"${var##*[![:space:]]}"}"
+    printf '%s' "$var"
+}
 
 function exists() {
     local command=$1
@@ -18,23 +27,24 @@ function symlink() {
     # ls -al $DOTFILES_DIR/configs/mappings.toml
     yq -oy ".$name" "$DOTFILES_DIR/configs/mappings.toml" | while IFS=":" read -r key value; do
         # keyとvalueの前後の空白をトリム
-        local source=$DOTFILES_DIR/configs/$name/$(echo $key)
-        local target=$(echo $value)
+        local source=$DOTFILES_DIR/configs/$name/$(trim $key)
+        local target=$HOME/$(trim $value)
 
-        if [ -h ~/"$target" ]; then
+        if [ -h "$target" ]; then
             # シンボリックリンクがすでに貼ってある場合、一度Unlilnkする
-            unlink ~/"$target"
+            unlink "$target"
         fi
-        if [ ! -e ~/"$target" ]; then
+        if [ ! -e "$target" ]; then
             # リンクする側が存在しない場合
-            mkdir -p $(dirname ~/"$target")
-            if [ ! -d $source ]; then
-                touch ~/"$target"
+            mkdir -p $(dirname "$target")
+            if [ ! -d "$source" ]; then
+                touch "$target"
             fi
         fi
 
         # シンボリックリンクの作成
-        ln -svf "$source" ~/"$target"
+        ln -svf "$source" "$target"
+        echo created link "$source" to "$target"
     done
 }
 
@@ -56,6 +66,12 @@ else
     exit 0
 fi
 
+symlink starship
+symlink sheldon
+symlink kitty
+symlink zsh
+symlink colima
+symlink docker
 # ### Clone repository ###
 
 # cd ~/

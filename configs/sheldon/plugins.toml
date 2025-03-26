@@ -40,10 +40,12 @@ use = ['{{ name }}.sh']
 [plugins.scripts]
 local = '~/.config/sheldon/scripts'
 use = ['*.zsh']
-apply = ['defer']
 
 [plugins.direnv]
 inline = 'eval "$(direnv hook zsh)"'
 
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
+
+[plugins.fzf]
+inline = 'eval "$(fzf --zsh)"'

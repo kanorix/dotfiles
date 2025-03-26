@@ -18,7 +18,72 @@ use.macos = 'brew'
 
 [rustup]
 use.macos = 'scripts/rustup.sh'
-zshrc = 'source "$HOME/.cargo/env"'
+zshrc = '''
+source "$HOME/.cargo/env"
+'''
+
+[bat]
+use.macos = 'brew'
+
+[gnutls]
+use.macos = 'brew'
+
+[lima]
+use.macos = 'brew'
+
+[curl]
+use.macos = 'brew'
+
+[direnv]
+use.macos = 'brew'
+
+[docker-buildx]
+use.macos = 'brew'
+
+[docker-compose]
+use.macos = 'brew'
+
+[eza]
+use.macos = 'brew'
+
+[fzf]
+use.macos = 'brew'
+
+[git-secrets]
+use.macos = 'brew'
+
+[jq]
+use.macos = 'brew'
+
+[starship]
+use.macos = 'brew'
+
+[tmux]
+use.macos = 'brew'
+
+[tree]
+use.macos = 'brew'
+
+[volta]
+use.macos = 'brew'
+zshrc = '''
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+'''
+
+['dimentium/autoraise/autoraise']
+use.macos = 'brew'
+brew.tap = 'dimentium/autoraise'
+
+['leoafarias/fvm/fvm']
+use.macos = 'brew'
+brew.tap = 'oven-sh/bun'
+zshrc = '''
+export PATH=$PATH:$HOME/fvm/default/bin
+'''
+
+['oven-sh/bun/bun']
+use.macos = 'brew'
 
 source = '''
 yq -oy 'with_entries(select(.value.use.macos == "brew")) | keys' install.toml
