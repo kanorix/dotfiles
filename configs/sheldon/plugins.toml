@@ -41,11 +41,18 @@ use = ['{{ name }}.sh']
 local = '~/.config/sheldon/scripts'
 use = ['*.zsh']
 
-[plugins.direnv]
-inline = 'eval "$(direnv hook zsh)"'
+# brewでインストールしたアプリにパスを通す
+[plugins.brew]
+inline = 'eval "$(/opt/homebrew/bin/brew shellenv)"'
 
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
 
+[plugins.direnv]
+inline = 'eval "$(direnv hook zsh)"'
+
 [plugins.fzf]
 inline = 'eval "$(fzf --zsh)"'
+
+[plugins.gcloud]
+inline = 'source $(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc'
