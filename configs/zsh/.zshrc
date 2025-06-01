@@ -23,6 +23,9 @@ if [[ $UNAME_OS == "Darwin" ]]; then
 #     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# brewでインストールしたgcloudの補完を有効にする（いつか移動する）
+source $(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc
+
 # sheldonを起動する
 # https://zenn.dev/fuzmare/articles/zsh-plugin-manager-cache
 

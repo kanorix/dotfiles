@@ -62,11 +62,11 @@ sudo chsh -s $(which zsh)
 
 ## GUI Application
 
-|         Name         | Config | MacOS | Linux |
-| :------------------: | :----: | :---: | :---: |
-|       `kitty`        |   ○    |   ○   |   -   |
-| `visual-studio-code` |   -    |   ○   |   -   |
-|      `xquartz`       |   -    |   ○   |   -   |
+|         Name         | Config | MacOS |
+| :------------------: | :----: | :---: |
+|       `kitty`        |   ○    |   ○   |
+| `visual-studio-code` |   -    |   ○   |
+|      `xquartz`       |   -    |   ○   |
 
 ```
 $ brew bundle dump --describe 'comment' --file=.brewfile

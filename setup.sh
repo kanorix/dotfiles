@@ -66,12 +66,12 @@ else
     exit 0
 fi
 
-symlink starship
-symlink sheldon
-symlink kitty
-symlink zsh
-symlink colima
-symlink docker
+# symlink starship
+# symlink sheldon
+# symlink kitty
+# symlink zsh
+# symlink colima
+# symlink docker
 # ### Clone repository ###
 
 # cd ~/

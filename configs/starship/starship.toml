@@ -13,6 +13,7 @@ $nodejs\
 $rust\
 $golang\
 $php\
+$gcloud\
 [ ](fg:#212736)\
 $fill\
 $cmd_duration\
@@ -80,6 +81,9 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[gcloud]
+format = '[ $symbol$account(@$domain)(\($project\))]($style) '
 
 [cmd_duration]
 format = "[󰔟 $duration]($style)"
