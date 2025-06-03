@@ -13,13 +13,15 @@ $nodejs\
 $rust\
 $golang\
 $php\
+$gcloud\
 [ ](fg:#212736)\
 $fill\
 $cmd_duration\
 [ ](fg:#1d2230)\
 $time\
 [ ](fg:#1d2230)\
-\n$character"""
+\n$character
+"""
 
 # right_format = """
 # $time
@@ -79,6 +81,9 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[gcloud]
+format = '[ $symbol$account(@$domain)(\($project\))]($style) '
 
 [cmd_duration]
 format = "[󰔟 $duration]($style)"

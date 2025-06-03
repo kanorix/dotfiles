@@ -38,12 +38,21 @@ github = "rupa/z"
 use = ['{{ name }}.sh']
 
 [plugins.scripts]
-local = '~/dotfiles/common/sheldon/scripts'
+local = '~/.config/sheldon/scripts'
 use = ['*.zsh']
-apply = ['defer']
+
+# brewでインストールしたアプリにパスを通す
+[plugins.brew]
+inline = 'eval "$(/opt/homebrew/bin/brew shellenv)"'
+
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
 
 [plugins.direnv]
 inline = 'eval "$(direnv hook zsh)"'
 
-[plugins.starship]
-inline = 'eval "$(starship init zsh)"'
+[plugins.fzf]
+inline = 'eval "$(fzf --zsh)"'
+
+[plugins.gcloud]
+inline = 'source $(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc'
