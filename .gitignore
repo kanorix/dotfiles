@@ -1,2 +1,4 @@
 .brewfile
 .brewcache
+
+.DS_Store

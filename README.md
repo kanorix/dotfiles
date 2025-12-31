@@ -2,13 +2,7 @@
 
 ## MacOS
 
-### 事前準備
-
-```sh
-xcode-select --install
-```
-
-### インストール
+### 準備
 
 ```sh
 curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/main/setup.sh | bash -s
@@ -20,6 +14,8 @@ curl -sf https://raw.githubusercontent.com/kanorix/dotfiles/main/setup.sh | bash
 sudo chsh -s $(which zsh)
 ```
 
-```
-$ brew bundle dump --describe 'comment' --file=.brewfile
-```
+### ソフトウェアのインストール
+
+
+
+### 設定ファイルのリンク
