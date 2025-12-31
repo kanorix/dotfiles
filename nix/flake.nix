@@ -30,7 +30,7 @@
     system = "aarch64-darwin";
     pkgs = nixpkgs.legacyPackages.${system};
   in {
-    darwinConfigurations.${username} = darwin.lib.darwinSystem {
+    darwinConfigurations."MacBookAir-3rd" = darwin.lib.darwinSystem {
       inherit system;
       modules = [
         home-manager.darwinModules.home-manager
@@ -131,6 +131,7 @@
           fonts = {
             packages = with pkgs; [
               hackgen-nf-font
+              udev-gothic
             ];
           };
 
@@ -144,12 +145,15 @@
 
               # パッケージ
               home.packages = with nixpkgs.legacyPackages.${system}; [
-                git
-                gh
+                # shell
                 zsh
                 sheldon
                 starship
                 fzf
+                eza
+                # 開発系ツール
+                git
+                gh
               ];
 
               programs.git = {
@@ -159,8 +163,10 @@
                     name  = "kanorix";
                     email = "kanorix320@gmail.com";
                   };
-                  core.editor = "vi";
+                  core.editor = "/usr/bin/vim";
                   init.defaultBranch = "main";
+                  pull.rebase = false;
+                  push.autoSetupRemote = true;
                 };
               };
             };

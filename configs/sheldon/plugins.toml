@@ -32,11 +32,6 @@ apply = ['defer']
 [plugins.zsh-256color]
 github = "chrissicool/zsh-256color"
 
-# ディレクトリ移動が楽になるやつ
-[plugins.z]
-github = "rupa/z"
-use = ['{{ name }}.sh']
-
 [plugins.scripts]
 local = '~/.config/sheldon/scripts'
 use = ['*.zsh']
@@ -45,4 +40,7 @@ use = ['*.zsh']
 inline = 'eval "$(starship init zsh)"'
 
 [plugins.fzf]
-inline = 'eval "$(fzf --zsh)"'
+inline = '''
+eval "$(fzf --zsh)"
+FZF_DEFAULT_OPTS='--layout=reverse --border --select-1'
+'''
