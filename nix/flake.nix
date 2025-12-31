@@ -106,6 +106,20 @@
               controlcenter = {
                 BatteryShowPercentage = true;
               };
+              CustomUserPreferences = {
+                "com.apple.symbolichotkeys" = {
+                  AppleSymbolicHotKeys = {
+                    # Spotlight Search('Cmd + Space')を無効化する
+                    "64" = {
+                      enabled = false;
+                    };
+                    # Finder search window('Cmd + Alt + Space')を無効化する
+                    "65" = {
+                      enabled = false;
+                    };
+                  };
+                };
+              };
             };
             keyboard = {
               enableKeyMapping = true;
