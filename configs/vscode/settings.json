@@ -1,0 +1,124 @@
+{
+  // Editor
+  "editor.fontFamily": "UDEV Gothic 35",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 12.5,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.stickyScroll.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.copyWithSyntaxHighlighting": false,
+  // Terminal
+  "terminal.integrated.fontFamily": "UDEV Gothic NF",
+  "terminal.integrated.fontSize": 13,
+  // Files
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/Cargo.lock": true
+  },
+  // Workbench
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.tree.enableStickyScroll": true,
+  // 属性を折り返します。
+  "html.format.wrapAttributes": "auto",
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "cSpell.fixSpellingWithRenameProvider": true,
+    "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+    "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "yaml.format.enable": true,
+  "[typescript]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "remote.SSH.configFile": "~/.ssh/config",
+  "clock.dateFormat": "HH:MM",
+  "cSpell.userWords": ["classpath", "factorypath", "NFLG", "UDEV"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.enableFiletypes": ["prisma"],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "background.windowBackgrounds": [],
+  "background.editorBackgrounds": [
+    "/Users/ryu/Pictures/kantoku/G1GpKfZjN8O5GvCK8WRiT75o.jpeg"
+  ],
+  "prisma.showPrismaDataPlatformNotification": false,
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[vue]": {
+    "editor.indentSize": 2
+  },
+  "workbench.colorTheme": "GitHub Dark Default",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts, ${capture}.css",
+    "main.tsx": "index.css",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
+  },
+  // auto close tag setting
+  "editor.linkedEditing": true,
+  "html.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "typescript.autoClosingTags": true,
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always",
+    "source.sortMembers": "always"
+  },
+  // cursor settings
+  "update.releaseTrack": "prerelease",
+  "docker.extension.enableComposeLanguageServer": false,
+  "githubPullRequests.pullBranch": "never",
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "claudeCode.preferredLocation": "panel"
+}

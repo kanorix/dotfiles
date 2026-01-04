@@ -37,10 +37,23 @@ local = '~/.config/sheldon/scripts'
 use = ['*.zsh']
 
 [plugins.starship]
-inline = 'eval "$(starship init zsh)"'
+inline = '''
+eval "$(starship init zsh)"
+'''
 
 [plugins.fzf]
 inline = '''
 eval "$(fzf --zsh)"
 FZF_DEFAULT_OPTS='--layout=reverse --border --select-1'
+'''
+
+[plugins.zoxide]
+inline = '''
+eval "$(zoxide init zsh)"
+alias j=zi
+'''
+
+[plugins.direnv]
+inline = '''
+eval "$(direnv hook zsh)"
 '''

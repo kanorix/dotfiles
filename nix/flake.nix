@@ -1,6 +1,6 @@
 {
   description = "Darwin system and Home Manager configuration";
-  
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     darwin = {
@@ -23,12 +23,18 @@
       flake = false;
     };
   };
-  
-  outputs = { self, nixpkgs, darwin, home-manager, nix-homebrew, homebrew-core, homebrew-cask }: 
+
+  outputs = { self, nixpkgs, darwin, home-manager, nix-homebrew, homebrew-core, homebrew-cask }:
   let
     username = "kanorix";
     system = "aarch64-darwin";
-    pkgs = nixpkgs.legacyPackages.${system};
+    # pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfreePredicate = (pkg:
+        builtins.elem (nixpkgs.lib.getName pkg) ["claude-code"]
+      );
+    };
   in {
     darwinConfigurations."MacBookAir-3rd" = darwin.lib.darwinSystem {
       inherit system;
@@ -132,6 +138,7 @@
             packages = with pkgs; [
               hackgen-nf-font
               udev-gothic
+              udev-gothic-nf
             ];
           };
 
@@ -144,17 +151,27 @@
               programs.home-manager.enable = true;
 
               # パッケージ
-              home.packages = with nixpkgs.legacyPackages.${system}; [
+              home.packages = with pkgs; [
                 # shell
                 zsh
                 sheldon
                 starship
                 fzf
+                zoxide
                 eza
                 # 開発系ツール
                 git
                 gh
+                devenv
+                direnv
+                # ai
+                claude-code
               ];
+
+              programs.direnv = {
+                enable = true;
+                nix-direnv.enable = true;
+              };
 
               programs.git = {
                 enable = true;
